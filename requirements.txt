@@ -1,0 +1,3 @@
+environ
+openai==1.1.1
+colorama
