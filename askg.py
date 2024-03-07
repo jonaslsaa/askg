@@ -184,11 +184,14 @@ def main():
     query = " ".join(sys.argv[1:])
     
     # Generate suggestions
-    print(Fore.YELLOW + Style.DIM + "Thinking..." + Style.RESET_ALL)
+    print(Fore.YELLOW + Style.DIM + "Thinking..." + Style.RESET_ALL, end='\r')
     suggestions = generate_suggestions(query)
     
     # Remove duplicate suggestion by comparing the command
     suggestions = remove_duplicates(suggestions)
+    
+    # Remove 'Thinking...' from the output
+    print("\r", end='')
 
     # Print suggestions
     print_suggestions(suggestions)
