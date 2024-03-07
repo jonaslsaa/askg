@@ -171,10 +171,10 @@ def do_command(query: str, suggestion: Suggestion):
                     break
             else:
                 print(Fore.RED + "Exiting...")
-                sys.exit(1)
+                sys.exit()
         else:
             print(Fore.RED + "Exiting...")
-            sys.exit(1)
+            sys.exit()
 
 def main():
     if len(sys.argv) < 2:
@@ -215,7 +215,7 @@ def main():
             break
     else:
         print(Fore.RED + "Exiting...")
-        sys.exit(1)
+        sys.exit()
 
 if __name__ == "__main__":
     main()
