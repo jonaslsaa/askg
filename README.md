@@ -1,4 +1,4 @@
-# AI command suggestions anywhere with Python
+# askG - AI command suggestions anywhere with Python
 
 ![Example usage](.github/example.png)
 
