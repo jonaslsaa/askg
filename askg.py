@@ -170,10 +170,10 @@ def do_command(query: str, suggestion: Suggestion):
                     do_command(query, suggestions[n - 1])
                     break
             else:
-                print(Fore.RED + "Exiting...")
+                print(Fore.RED + "\n[*] Exiting...")
                 sys.exit()
         else:
-            print(Fore.RED + "Exiting...")
+            print(Fore.RED + "\n[*] Exiting...")
             sys.exit()
 
 def main():
@@ -217,7 +217,7 @@ def main():
             do_command(query, suggestions[n - 1])
             break
     else:
-        print(Fore.RED + "Exiting...")
+        print(Fore.RED + "\n[*] Exiting...")
         sys.exit()
 
 if __name__ == "__main__":
