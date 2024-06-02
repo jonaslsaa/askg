@@ -18,6 +18,9 @@ if len(API_KEY) < 8:
 
 openai.api_key = API_KEY
 
+BASE_MODEL_NAME = "gpt-3.5-turbo-1106"
+IMPROVED_MODEL_NAME = "gpt-4o"
+
 @dataclass
 class Suggestion:
     command: str
@@ -68,7 +71,7 @@ def generate_suggestions(query: str) -> List[Suggestion]:
         }
     ]
     
-    response = do_openai_call("gpt-3.5-turbo-1106", messages)
+    response = do_openai_call(BASE_MODEL_NAME, messages)
     suggestions =  parse_response_to_suggestions(response)
     return suggestions
 
@@ -85,7 +88,7 @@ def improve_suggestions(query: str, old_suggestions: List[Suggestion]) -> List[S
             'content': f'USER QUERY: {query}\nDISCARDED SUGGESTIONS: {old_suggestions_text}'
         }
     ]
-    response = do_openai_call("gpt-4-1106-preview", messages)
+    response = do_openai_call(IMPROVED_MODEL_NAME, messages)
     suggestions =  parse_response_to_suggestions(response)
     return suggestions
 
@@ -101,7 +104,7 @@ def fix_suggestion(query, used_suggestion, error_code, error_output):
             'content': f'USER QUERY: {query}\nUSED SUGGESTION: {used_suggestion}\nERROR CODE: {error_code}\nSTDERR: {error_output}'
         }
     ]
-    response = do_openai_call("gpt-4-1106-preview", messages, n=1)
+    response = do_openai_call(IMPROVED_MODEL_NAME, messages, n=1)
     suggestions =  parse_response_to_suggestions(response)
     return suggestions
 
