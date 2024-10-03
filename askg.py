@@ -18,7 +18,7 @@ if len(API_KEY) < 8:
 
 openai.api_key = API_KEY
 
-BASE_MODEL_NAME = "gpt-3.5-turbo-1106"
+BASE_MODEL_NAME = "gpt-4o-mini"
 IMPROVED_MODEL_NAME = "gpt-4o"
 
 @dataclass
