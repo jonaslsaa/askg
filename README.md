@@ -2,7 +2,7 @@
 
 ![Example usage](.github/example.png)
 
-Using OpenAI GPT-3 (or GPT-4), get powerful AI command suggestions anywhere with Python. Uses GPT-4 as fallback when command fails or user wants to improve the current command.
+Using OpenAI GPT-4, get powerful AI command suggestions anywhere with Python. Uses GPT-4 as fallback when command fails or user wants to improve the current command.
 
 User's system is given as context, or if the command fails to execute it is given as context to the AI.
 
